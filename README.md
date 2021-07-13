@@ -2,12 +2,11 @@
 
 ## Topics Covered:
 
-'''
--HTML5
--CSS3
--Web Design Basics
--Build of a Website
--Responsive Web Design with mediaqueries
--Effects
--Website Deployment
-'''
+- HTML5
+- CSS3
+- Web Design Basics
+- Build of a Website
+- Responsive Web Design with mediaqueries
+- Effects
+- Website Deployment
+
