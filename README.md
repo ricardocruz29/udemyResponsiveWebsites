@@ -4,9 +4,8 @@
 
 - HTML5
 - CSS3
-- Web Design Basics
-- Build of a Website
-- Responsive Web Design with mediaqueries
-- Effects
+- Layouts: Floats, Flexbox, Grid
+- Web Design Rules and Framework
+- Components and Layout Patterns
+- Omnifood Project
 - Website Deployment
-
