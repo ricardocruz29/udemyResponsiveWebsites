@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- Heading -->
-    <header>
+    <header class="main-header">
       <h1>📘 The Code Magazine</h1>
 
       <!-- Navigation -->
@@ -31,7 +31,9 @@
           height="50"
           width="50"
         />
-        <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+        <p id="author">
+          Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+        </p>
         <img
           src="./resources/post-img.jpg"
           alt="HTML code on a screen"
@@ -99,7 +101,7 @@
     <!-- Aside information that complements information written in the article -->
     <aside>
       <h4>Related posts</h4>
-      <ul>
+      <ul class="related-list">
         <li>
           <img
             src="./resources/related-1.jpg"
@@ -108,7 +110,7 @@
             height="75"
           />
           <a href="#">How to Learn Web Development</a>
-          <p>By Jonas Schmedtmann</p>
+          <p class="related-author">By Jonas Schmedtmann</p>
         </li>
         <li>
           <img
@@ -118,7 +120,7 @@
             height="75"
           />
           <a href="#">The Unknown powers of CSS</a>
-          <p>By Jim Dillon</p>
+          <p class="related-author">By Jim Dillon</p>
         </li>
         <li>
           <img
@@ -128,14 +130,14 @@
             height="75"
           />
           <a href="#">Why JavaScript is Awesome</a>
-          <p>By Matilda</p>
+          <p class="related-author">By Matilda</p>
         </li>
       </ul>
     </aside>
 
     <footer>
       <!-- &copy; is an HTML entity. There are tables of this codes refering to different symbols -->
-      Copyright &copy; 2027 by The Code Magazine
+      <p id="copyright">Copyright &copy; 2027 by The Code Magazine</p>
     </footer>
   </body>
 </html>
