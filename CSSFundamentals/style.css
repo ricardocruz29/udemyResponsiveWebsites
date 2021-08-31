@@ -1,12 +1,54 @@
-h1,
-h2,
-h4,
-h4,
-p,
-li {
+* {
+  /* apply some style to every single element */
+  /* border-top: 10px solid #1098ad; */
+  /* If we uncomment the code above, every single html element will have a border */
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE SECTIONS */
+
+body {
+  /* Applys to the body element, and has inheritance applied to the child elements */
   font-family: sans-serif;
   color: #444444;
+  border-top: 10px solid #1098ad;
+
+  position: relative;
 }
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+nav /* inherit demonstration */ {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 550px;
+}
+
+/* SMALLER SECTIONS */
 
 h1,
 h2,
@@ -22,10 +64,12 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 h4 {
@@ -37,10 +81,33 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.last-paragraph {
+  margin-bottom: 40px;
+  /* We could have defined margin-top of 40px on the element below
+  However there would be a margin collapse.
+  THe p element would have 15px margin bottom
+  The h3 element would have margin-top of 40px
+  This results in a margin of 40px, and both elements would be sharing common space
+  TO avoid this, this class was created */
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Overwrite margin in the last li item */
+li:last-child {
+  margin-bottom: 0;
 }
 
 #author {
@@ -59,16 +126,6 @@ li {
 
 .related-list {
   list-style: none;
-}
-
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
 }
 
 li:first-child {
@@ -93,4 +150,33 @@ a:hover {
 a:active {
   background-color: black;
   font-style: italic;
+}
+
+.code-img {
+  width: 100%;
+  height: auto;
+}
+
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+.like-button {
+  cursor: pointer;
+  font-size: 22px;
+  padding: 20px;
+  position: absolute;
+
+  /* if the parent element doesn't have position relative, this values will be applied to
+  viewport, i.e, to screen size */
+  /* It does not need to be the body, but the parent element of this buttons
+  needs to have position relative, so the aboslute position of this element is relative to the parent element */
+  bottom: 50px;
+  right: 50px;
 }
