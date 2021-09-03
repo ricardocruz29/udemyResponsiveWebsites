@@ -180,3 +180,43 @@ nav a:link:last-child {
   bottom: 50px;
   right: 50px;
 }
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* h2::first-letter {
+  font-size: 80px;
+} */
+
+/* p::first-line {
+  color: red
+} */
+
+/* adjacent element of h3 -> the very next element */
+
+/*
+h3 + p::first-line {
+  color: red;
+}
+*/
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  position: absolute;
+  right: -25px;
+  top: -10px;
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+
+  /* It is defined as inline, so padding and margin wont work vertically */
+  display: inline-block;
+  padding: 5px 10px;
+}
