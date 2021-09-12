@@ -1,0 +1,288 @@
+* {
+  /* apply some style to every single element */
+  /* border-top: 10px solid #1098ad; */
+  /* If we uncomment the code above, every single html element will have a border */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Now the width and height of an element are final
+  We have no longer to calculate widht of the content + padding + border
+  Now, the widht we define is final, and the padding and border reduce the content
+  width. The content widht adapts with padding and border to fullfill the widht defined */
+}
+
+/* PAGE SECTIONS */
+
+body {
+  /* Applys to the body element, and has inheritance applied to the child elements */
+  font-family: sans-serif;
+  color: #444444;
+  border-top: 10px solid #1098ad;
+
+  position: relative;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+nav /* inherit demonstration */ {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 40px;
+}
+
+/* SMALLER SECTIONS */
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center; /*center of parent element*/
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.last-paragraph {
+  margin-bottom: 40px;
+  /* We could have defined margin-top of 40px on the element below
+  However there would be a margin collapse.
+  THe p element would have 15px margin bottom
+  The h3 element would have margin-top of 40px
+  This results in a margin of 40px, and both elements would be sharing common space
+  TO avoid this, this class was created */
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Overwrite margin in the last li item */
+li:last-child {
+  margin-bottom: 0;
+}
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  text-decoration: underline solid orangered;
+  font-weight: bold;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+.code-img {
+  width: 100%;
+  height: auto;
+}
+
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+.like-button {
+  cursor: pointer;
+  font-size: 22px;
+  padding: 20px;
+  position: absolute;
+
+  /* if the parent element doesn't have position relative, this values will be applied to
+  viewport, i.e, to screen size */
+  /* It does not need to be the body, but the parent element of this buttons
+  needs to have position relative, so the aboslute position of this element is relative to the parent element */
+  bottom: 50px;
+  right: 50px;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* h2::first-letter {
+  font-size: 80px;
+} */
+
+/* p::first-line {
+  color: red
+} */
+
+/* adjacent element of h3 -> the very next element */
+
+/*
+h3 + p::first-line {
+  color: red;
+}
+*/
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  position: absolute;
+  right: -25px;
+  top: -10px;
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+
+  /* It is defined as inline, so padding and margin wont work vertically */
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+/* FLOATS */
+.author-img {
+  /* floats takes the element out of the document, like absolute position, with the difference that every eleemnt around this, floats around */
+  float: left;
+}
+
+.author {
+  /* If this element didnt have float, it would be undernith the other element */
+  /* With float left, this elements start right after the previous one */
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* The parent element of these two elements is "header". Header has background color,
+that adjusts with the height of the child elements. Since these child elements
+are now floated, and so, they are out of the document, header height will collpase.
+*/
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+/* To fix this problem, the easiest way is to create another div, with the clear property */
+
+/* .clear {
+  clear: both;
+} */
+
+/* The other way is to use clearfix hack, that does not use empty divs */
+/* The ::after creates a new element in the last, exactly the same as creating a new empty div */
+.clearfix::after {
+  /* CLearfix is added to the parent elemnt */
+  content: "";
+  display: block; /* By default they are inline, but it only works as block elements */
+  clear: both;
+}
+
+/* float layout */
+
+article {
+  width: 825px;
+  float: left;
+}
+
+/* Gap of 75px since container is 1200px */
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  /* Clear prevents this element from floating around the others */
+  clear: both;
+}
