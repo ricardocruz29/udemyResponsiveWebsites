@@ -29,7 +29,6 @@ body {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
 }
 
 nav /* inherit demonstration */ {
@@ -124,8 +123,10 @@ li:last-child {
 }
 
 .related-author {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 .related-list {
@@ -164,7 +165,6 @@ a:active {
 
 nav a:link {
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -227,31 +227,34 @@ h2::after {
 }
 
 /* FLOATS */
-.author-img {
-  /* floats takes the element out of the document, like absolute position, with the difference that every eleemnt around this, floats around */
-  float: left;
-}
 
-.author {
-  /* If this element didnt have float, it would be undernith the other element */
-  /* With float left, this elements start right after the previous one */
+/* floats takes the element out of the document, like absolute position, with the difference that every eleemnt around this, floats around */
+/* .author-img {
+  float: left;
+} */
+
+/* If this element didnt have float, it would be undernith the other element */
+/* With float left, this elements start right after the previous one */
+
+/* .author {
+  
   float: left;
   margin-top: 10px;
   margin-left: 20px;
-}
+} */
 
 /* The parent element of these two elements is "header". Header has background color,
 that adjusts with the height of the child elements. Since these child elements
 are now floated, and so, they are out of the document, header height will collpase.
 */
 
-h1 {
+/* h1 {
   float: left;
 }
 
 nav {
   float: right;
-}
+} */
 
 /* To fix this problem, the easiest way is to create another div, with the clear property */
 
@@ -261,28 +264,119 @@ nav {
 
 /* The other way is to use clearfix hack, that does not use empty divs */
 /* The ::after creates a new element in the last, exactly the same as creating a new empty div */
-.clearfix::after {
-  /* CLearfix is added to the parent elemnt */
+/* CLearfix is added to the parent elemnt */
+/* By default they are inline, but it only works as block elements */
+/* .clearfix::after {
+  
   content: "";
-  display: block; /* By default they are inline, but it only works as block elements */
+  display: block; 
   clear: both;
-}
+} */
 
 /* float layout */
 
-article {
+/* article {
   width: 825px;
   float: left;
-}
+} */
 
 /* Gap of 75px since container is 1200px */
 
-aside {
+/* aside {
   width: 300px;
   float: right;
+} */
+
+/* Clear prevents this element from floating around the others */
+/* footer {
+  clear: both;
+} */
+
+/* Flexbox */
+
+/* navbar */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space between both flex-items */
+}
+
+/* author */
+.author-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+/* related posts */
+.related-post {
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.related-post:last-child {
+  margin-bottom: 0px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* This part is better be done in css grid */
+
+/* .row {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+} */
+
+/* aside { */
+/*
+  DEFAULTS 
+  flex-grow: 0; //Opposite of shrink, allowing elements to grow if there is space in container
+  flex-shrink: 1; //Determines if flexbox is allowed to shrink the elements to fit in the cointainer
+  flex-basis: auto; //Recommended width for each element.
+  */
+/* flex: 0 0 300px; aside we want 300px. Article just fills the rest of the space left */
+/* align-self: flex-start;
+} */
+
+/* CSS GRID */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px; /*substitute margins that separate sections with this*/
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+  align-self: start;
 }
 
 footer {
-  /* Clear prevents this element from floating around the others */
-  clear: both;
+  grid-column: 1 / -1;
 }
