@@ -115,3 +115,122 @@ body {
   transform: rotate(180deg);
 }
 /* ------------------- */
+
+/* CAROUSEL COMPONENT */
+
+.carousel {
+  width: 800px;
+  margin: 100px auto;
+  padding: 32px 48px 32px 86px;
+  background-color: #087f5b;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 86px;
+
+  position: relative;
+}
+
+.carousel-img {
+  height: 200px;
+  width: auto;
+  border-radius: 8px;
+  transform: scale(1.5);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: #e6fcf5;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #c3fae8;
+}
+.testimonial-job {
+  font-size: 12px;
+  color: #c3fae8;
+}
+
+.carousel-btn {
+  background-color: #fff;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  /* Father Element is the carousel which have position relative*/
+  position: absolute;
+
+  /* To center the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* BOTH WAYS WORK */
+  /* In the center minus half of the height of the button */
+  /* top: calc(50% - 20px); 
+  /* center it in 50% and then translate it vertically minus 50% of the element height (20px) */
+  top: 50%;
+  /* This property is overwrited in the left and right*/
+  /* transform: translate(0, -50%); */
+}
+
+.btn-left {
+  /* BOTH WAYS WORK */
+
+  /* left: calc(0% - 20px); */
+  /* Start at 0, and then move 50% of its own widht to the left*/
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.btn-right {
+  /* BOTH WAYS WORK */
+
+  /* right: calc(0% - 20px); */
+  /* Start at 0, and then move 50% of its own widht to the right*/
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.carousel-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #087f5b;
+}
+
+.dots {
+  position: absolute;
+
+  /* Start at the 50%, and then minus half of the space they occupy*/
+  left: 50%;
+  transform: translate(-50%, 32px);
+  bottom: 0;
+
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+
+  background-color: #fff;
+  border: 2px solid #087f5b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot--filled {
+  background-color: #087f5b;
+}
+/* ------------------- */
