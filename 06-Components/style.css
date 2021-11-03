@@ -122,14 +122,33 @@ body {
   width: 800px;
   margin: 100px auto;
   padding: 32px 48px 32px 86px;
-  background-color: #087f5b;
   border-radius: 8px;
 
-  display: flex;
+  display: none;
   align-items: center;
   gap: 86px;
 
   position: relative;
+}
+
+.carousel-active {
+  display: flex;
+}
+
+.carousel--green {
+  background-color: #087f5b;
+}
+
+.carousel--red {
+  background-color: #f03e3e;
+}
+
+.carousel--blue {
+  background-color: #228be6;
+}
+
+.carousel--yellow {
+  background-color: #f59f00;
 }
 
 .carousel-img {

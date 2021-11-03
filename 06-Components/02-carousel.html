@@ -8,7 +8,172 @@
     <title>Carousel Component</title>
   </head>
   <body>
-    <div class="carousel">
+    <div class="carousel carousel-active carousel--green">
+      <img src="maria.jpg" alt="Maria de Almeida photo" class="carousel-img" />
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sequi
+          consectetur cupiditate deserunt id rerum cumque aliquam quibusdam
+          minima accusamus ex non."
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+      </blockquote>
+
+      <button class="carousel-btn btn-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button class="carousel-btn btn-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      <div class="dots">
+        <!-- nbsp-non breaking space -->
+        <button class="dot dot--filled">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
+
+    <div class="carousel carousel--blue">
+      <img src="maria.jpg" alt="Maria de Almeida photo" class="carousel-img" />
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sequi
+          consectetur cupiditate deserunt id rerum cumque aliquam quibusdam
+          minima accusamus ex non."
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+      </blockquote>
+
+      <button class="carousel-btn btn-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button class="carousel-btn btn-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      <div class="dots">
+        <!-- nbsp-non breaking space -->
+        <button class="dot dot--filled">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
+
+    <div class="carousel carousel--red">
+      <img src="maria.jpg" alt="Maria de Almeida photo" class="carousel-img" />
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sequi
+          consectetur cupiditate deserunt id rerum cumque aliquam quibusdam
+          minima accusamus ex non."
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+      </blockquote>
+
+      <button class="carousel-btn btn-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button class="carousel-btn btn-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="carousel-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      <div class="dots">
+        <!-- nbsp-non breaking space -->
+        <button class="dot dot--filled">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
+
+    <div class="carousel carousel--yellow">
       <img src="maria.jpg" alt="Maria de Almeida photo" class="carousel-img" />
       <blockquote class="testimonial">
         <p class="testimonial-text">
@@ -64,13 +229,64 @@
     </div>
 
     <script lang="javascript">
-      // const items = document.getElementsByClassName("item");
-      // for (let i=0; i < items.length; i++){
-      //   items[i].addEventListener('click', open);
-      // }
+      const carousel_items = document.getElementsByClassName("carousel");
+      const carousel_buttons = document.getElementsByClassName("carousel-btn");
 
-      // function open(event){
-      //   this.classList.toggle("open");
+      /*
+
+      car0 -> btn 0 e 1
+      car1 -> btn 2 e 3
+      car2 -> btn 4 e 5
+      car3 -> btn 6 e 7
+
+      talvez dividir por 2 numa divisao inteira idk
+
+      */
+      console.log(carousel_items);
+      for (let i=0; i < carousel_buttons.length; i++){
+        // carousel_buttons[i].addEventListener('click', changeImage);
+        carousel_buttons[i].addEventListener('click', function(event){
+          if (this.classList.contains("btn-left")) {
+            console.log("left" + i);
+            if (i === 0) {
+              carousel_items[0].classList.remove("carousel-active");
+              carousel_items[3].classList.add("carousel-active");
+            } else {
+              carousel_items[i-1].classList.add("carousel-active");
+              carousel_items[i].classList.remove("carousel-active");
+            }
+          } else if (this.classList.contains("btn-right")) {
+            console.log("right" + i);
+            if (i === 7) {
+              carousel_items[3].classList.remove("carousel-active");
+              carousel_items[0].classList.add("carousel-active");
+            } else {
+              carousel_items[i].classList.add("carousel-active");
+              carousel_items[i-1].classList.remove("carousel-active");
+
+            }
+          }
+        });
+      }
+
+      // function changeImage(event){
+      //   if (this.classList.contains("btn-left")) {
+      //     if (num === 0) {
+      //       console.log("entreino0")
+      //     } else {
+
+      //     }
+      //   } else if (this.style.classList.contains("btn-right")) {
+      //     if (num === 7) {
+      //       console.log("entreino7")
+      //     } else {
+
+      //     }
+      //   }
+
+      //   console.log(this);
+      //   console.log(carousel_buttons);
+      //   // this.classList.toggle("open");
       // }
     </script>
   </body>
