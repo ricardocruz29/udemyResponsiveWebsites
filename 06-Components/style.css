@@ -253,3 +253,38 @@ body {
   background-color: #087f5b;
 }
 /* ------------------- */
+
+/*   TABLE COMPONENT   */
+
+table {
+  width: 800px;
+  margin: 100px auto;
+  /* border: 1px solid #343a40;*/
+  border-collapse: collapse;
+}
+
+thead tr {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+thead th {
+  width: 25%;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+/* ------------------- */
