@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
 
-  background-color: #fdf2e9;
+  background-color: #fae5d3;
   height: 9.6rem;
   padding: 0 4.8rem;
 }
@@ -58,7 +58,7 @@
 /* **************************************** */
 /* HERO SECTION */
 .section-hero {
-  background-color: #fdf2e9;
+  background-color: #fae5d3;
   padding: 4.8rem 0 9.6rem 0;
 }
 
@@ -95,7 +95,7 @@
   height: 4.8rem;
   width: 4.8rem;
   border-radius: 50%;
-  border: 2px solid #fdf2e9;
+  border: 2px solid #fae5d3;
   margin-right: -1.6rem;
 }
 
@@ -116,6 +116,37 @@
 .hero-img {
   width: 100%;
 }
+/* **************************************** */
+
+/* **************************************** */
+/* FEATURED IN */
+.section-featured {
+  padding: 4.8rem 3.2rem 0;
+}
+
+.heading-featured-in {
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #999;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+  width: auto;
+  filter: brightness(0); /*completely black*/
+  opacity: 0.5; /* turn into grey */
+}
+
 /* **************************************** */
 
 /* **************************************** */
@@ -140,10 +171,154 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; */
+  /* Height doesn't work. To make it a perfect square we can use padding-bottom, that refers to the parent element */
+  padding-bottom: 60%;
+  background-color: #fae5d3;
+  z-index: -2;
+}
+
+.step-img-box::after {
+  width: 45%;
+  /* height: 60%; */
+  /* Height doesn't work. To make it a perfect square we can use padding-bottom, that refers to the parent element */
+  padding-bottom: 45%;
+  background-color: #f8d8bd;
+  z-index: -1;
 }
 
 .step-img {
   width: 35%;
+  z-index: 1000;
 }
 
+/* **************************************** */
+
+/* **************************************** */
+/* MEALS */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  color: #333;
+  border-radius: 10000px;
+  font-weight: 600;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075),
+    -1.2rem 0 2.4rem rgba(0, 0, 0, 0.02), 1.2rem 0 2.4rem rgba(0, 0, 0, 0.02);
+  border-radius: 11px;
+  overflow: hidden; /* Whatever overflows it, it is hidden -> Without this, the image woudl overflow the border radius */
+  background-color: #fdf2e9;
+  transition: all 0.4s;
+}
+
+.meal:hover {
+  transform: translate(0, -1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06),
+    -2.4rem 0 4.8rem rgba(0, 0, 0, 0.01), 2.4rem 0 4.8rem rgba(0, 0, 0, 0.01);
+}
+
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meal-name {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
 /* **************************************** */
