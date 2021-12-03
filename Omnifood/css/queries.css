@@ -1,0 +1,387 @@
+/* rem and em do NOT depend on html font-size in media queries!
+Instead we assume 1rem = 1em = 16px
+rem has some bugs in some browsers in media queries -> We can use em that is the current font-size */
+
+/*Below 1344px (Smaller computers) */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*Below 1200px (Tablets on horizontal) */
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px = 0.5625 = 56.25%  */
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 4.8rem;
+  }
+}
+
+/*Below 944px (Tablets on vertical) */
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50%  */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 8rem;
+    gap: 8rem;
+  }
+
+  .hero-text-box,
+  .hero-image-box {
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 6.2rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 60fr 40fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.96);
+    transform: translateX(100%); /* move outside the window */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* We should not use display none because we can't add transitions to that */
+
+    /* Instead, follow these steps */
+    /* 1) Hide it visualy */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /*If the browser supports add this, if not, the default will be applied */
+  @supports (backdrop-filter: blur(1.5rem)) {
+    .main-nav {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(1.5rem);
+    }
+  }
+
+  @supports (-webkit-backdrop-filter: blur(1.5rem)) {
+    .main-nav {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(1.5rem);
+      -webkit-backdrop-filter: blur(1.5rem);
+    }
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/*Below 784px (Smaller Tablets) */
+@media (max-width: 49em) {
+  .grid-3--cols,
+  .grid-4--cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diet-list {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .nav-col {
+    grid-row: 1 / 2;
+    grid-column: span 2; /*occupy 2*/
+    margin-bottom: 3.2rem;
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .footer {
+    padding: 9.6rem 0;
+  }
+
+  .section-cta {
+    padding: 4.8rem 0 9.6rem 0;
+  }
+
+  .pricing-plan--complete {
+    padding: 3.2rem;
+  }
+
+  .pricing-plan--starter {
+    padding: 3rem;
+  }
+
+  .logos img {
+    height: 1.8rem;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-form button {
+    margin-top: 4.8rem;
+  }
+}
+
+/*Below 560px (Phones) */
+@media (max-width: 35em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+  .grid-2--cols,
+  .grid-3--cols,
+  .grid-4--cols,
+  .grid-5--cols {
+    grid-template-columns: 1fr;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  /* 2th child of the parent element */
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  /* 6th child of the parent element */
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .step-img-box {
+    margin-top: 6.4rem;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .meal {
+    max-width: 35rem;
+    justify-self: center;
+  }
+
+  .pricing-plan {
+    max-width: 35rem;
+    justify-self: center;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    grid-row: 1;
+    height: 32rem;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+}
+
+/*
+- Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+Spacing System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+/* FIXING SAFARI FLEXBOX GAP */
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
