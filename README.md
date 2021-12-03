@@ -14,4 +14,4 @@
 
 https://ricardocruz29.github.io/udemyResponsiveWebsites/{path according to the github folders}
 
-## Omnifood : https://ricardocruz29.github.io/udemyResponsiveWebsites/Omnifood
+## Omnifood : https://omnifood-ricardo.netlify.app/ || https://ricardocruz29.github.io/udemyResponsiveWebsites/Omnifood
